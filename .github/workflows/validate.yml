@@ -1,0 +1,36 @@
+name: Validar staging
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - staging
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firma-bordados-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-and-build:
+    name: TypeScript y build Vite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+          cache: pnpm
+      - name: Activar pnpm
+        run: corepack enable
+      - name: Instalar dependencias bloqueadas
+        run: pnpm install --frozen-lockfile
+      - name: Validar tipos
+        run: pnpm check
+      - name: Generar sitio estático
+        run: pnpm exec vite build

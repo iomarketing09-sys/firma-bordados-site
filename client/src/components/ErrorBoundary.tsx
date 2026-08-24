@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+/** Design: Color que Trabaja — retain a warm, direct recovery path even when the landing cannot render. */
 import { AlertTriangle, RotateCcw } from "lucide-react";
 import { Component, ReactNode } from "react";
 
@@ -8,50 +8,50 @@ interface Props {
 
 interface State {
   hasError: boolean;
-  error: Error | null;
 }
 
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = { hasError: false, error: null };
+    this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
+  static getDerivedStateFromError(): State {
+    return { hasError: true };
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex items-center justify-center min-h-screen p-8 bg-background">
-          <div className="flex flex-col items-center w-full max-w-2xl p-8">
+        <main className="flex min-h-screen items-center justify-center bg-[#fffaf3] p-6 text-[#123e75]">
+          <section
+            className="w-full max-w-xl border-l-8 border-[#df2b2c] bg-white p-8 shadow-[0_18px_50px_rgba(13,76,158,0.12)] sm:p-10"
+            aria-labelledby="error-title"
+          >
             <AlertTriangle
               size={48}
-              className="text-destructive mb-6 flex-shrink-0"
+              className="mb-6 text-[#df2b2c]"
+              aria-hidden="true"
             />
 
-            <h2 className="text-xl mb-4">An unexpected error occurred.</h2>
+            <h1 id="error-title" className="font-display text-3xl font-extrabold tracking-tight">
+              Esta página necesita recargarse.
+            </h1>
 
-            <div className="p-4 w-full rounded bg-muted overflow-auto mb-6">
-              <pre className="text-sm text-muted-foreground whitespace-break-spaces">
-                {this.state.error?.stack}
-              </pre>
-            </div>
+            <p className="mt-4 max-w-lg text-base leading-7 text-[#365676]">
+              Ocurrió un problema temporal al mostrar el contenido. Recarga la página para intentarlo de nuevo.
+            </p>
 
             <button
+              type="button"
               onClick={() => window.location.reload()}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg",
-                "bg-primary text-primary-foreground",
-                "hover:opacity-90 cursor-pointer"
-              )}
+              className="mt-7 inline-flex items-center gap-2 bg-[#df2b2c] px-5 py-3 font-bold text-white transition hover:bg-[#bd2022] focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-[#f3bd25]"
             >
               <RotateCcw size={16} />
-              Reload Page
+              Recargar página
             </button>
-          </div>
-        </div>
+          </section>
+        </main>
       );
     }
 
