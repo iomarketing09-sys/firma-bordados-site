@@ -1,0 +1,100 @@
+/* Design: Color que Trabaja — warm, clear B2B design with official cobalt, yellow and red brand cues.
+   Motion: one-time stitch draw, short reveal cadence, tactile CTAs; all non-essential animation honors reduced motion. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@700;800;900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", Arial, sans-serif;
+  --font-display: "Nunito Sans", Arial, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 0.35rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+:root {
+  --background: #fffdf7;
+  --foreground: #183d79;
+  --card: #ffffff;
+  --card-foreground: #183d79;
+  --popover: #ffffff;
+  --popover-foreground: #183d79;
+  --primary: #0d4c9e;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f7ff;
+  --secondary-foreground: #183d79;
+  --muted: #f2f7ff;
+  --muted-foreground: #65728a;
+  --accent: #fff2bd;
+  --accent-foreground: #123d80;
+  --destructive: #df2b2c;
+  --destructive-foreground: #ffffff;
+  --border: #d8e0ec;
+  --input: #cbd8eb;
+  --ring: #0d4c9e;
+}
+
+* { border-color: var(--border); }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "DM Sans", Arial, sans-serif; }
+::selection { background: #f3bd25; color: #123d80; }
+.font-display { font-family: "Nunito Sans", Arial, sans-serif; }
+.hero-thread { pointer-events: none; }
+.hero-thread-path { fill: none; stroke: #0d4c9e; stroke-linecap: round; stroke-width: 2.5; stroke-dasharray: 5 11; }
+.hero-thread-dot { fill: #df2b2c; }
+.hero-thread-dot-two { fill: #f3bd25; }
+.motion-cta:active { transform: scale(0.97); }
+.stitch-rule { display: inline-flex; align-items: center; gap: 5px; height: 8px; color: #0d4c9e; }
+.stitch-rule i { display: block; height: 2px; width: 10px; border-radius: 999px; background: currentColor; }
+.stitch-rule i:nth-child(2), .stitch-rule i:nth-child(4) { width: 4px; background: #f3bd25; }
+.catalogue-meta { display: flex; align-items: center; justify-content: space-between; color: #557095; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.15em; line-height: 1; text-transform: uppercase; }
+.catalogue-meta span:last-child { color: #df2b2c; }
+.catalogue-sheet { background-image: linear-gradient(90deg, rgba(13,76,158,0.08) 1px, transparent 1px); background-position: right 24px bottom 22px; background-size: 7px 7px; }
+.contact-thread { pointer-events: none; }
+.contact-thread path { fill: none; stroke: #f3bd25; stroke-dasharray: 5 13; stroke-linecap: round; stroke-width: 2.2; }
+
+@media (prefers-reduced-motion: no-preference) {
+  a, button, article { transition-timing-function: cubic-bezier(0.23,1,0.32,1); }
+  .motion-ready [data-reveal] { opacity: 0; transform: translateY(16px); }
+  .motion-ready [data-reveal].is-visible { animation: rise-in 540ms cubic-bezier(0.23,1,0.32,1) both; }
+  .motion-ready [data-reveal][data-reveal-delay="1"].is-visible { animation-delay: 60ms; }
+  .motion-ready [data-reveal][data-reveal-delay="2"].is-visible { animation-delay: 120ms; }
+  .motion-ready [data-reveal][data-reveal-delay="3"].is-visible { animation-delay: 180ms; }
+  .motion-ready [data-reveal][data-reveal-delay="4"].is-visible { animation-delay: 240ms; }
+  .motion-ready .hero-thread-path { stroke-dasharray: 8 14; stroke-dashoffset: 440; animation: stitch-draw 850ms cubic-bezier(0.23,1,0.32,1) 120ms both; }
+  .motion-ready .hero-thread-dot { opacity: 0; animation: stitch-dot 200ms cubic-bezier(0.23,1,0.32,1) 780ms both; }
+  .motion-ready .hero-thread-dot-two { animation-delay: 860ms; }
+  .catalogue-card:hover .catalogue-arrow { transform: translate(2px, -2px); }
+  .catalogue-sheet:hover .stitch-rule i { animation: thread-pulse 520ms cubic-bezier(0.23,1,0.32,1) both; }
+  .catalogue-sheet:hover .stitch-rule i:nth-child(2) { animation-delay: 55ms; }
+  .catalogue-sheet:hover .stitch-rule i:nth-child(3) { animation-delay: 110ms; }
+  .catalogue-sheet:hover .stitch-rule i:nth-child(4) { animation-delay: 165ms; }
+  .catalogue-sheet:hover .stitch-rule i:nth-child(5) { animation-delay: 220ms; }
+}
+
+@keyframes rise-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes stitch-draw { to { stroke-dashoffset: 0; } }
+@keyframes stitch-dot { to { opacity: 1; transform: scale(1); } }
+@keyframes thread-pulse { 50% { transform: translateY(-2px); background: #df2b2c; } }
