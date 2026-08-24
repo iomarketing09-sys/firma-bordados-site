@@ -113,6 +113,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#fffdf7] text-[#183d79]">
+      <a className="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d8e0ec] bg-white/95 shadow-[0_5px_20px_rgba(17,57,117,0.1)] backdrop-blur-md">
         <div className="h-2 bg-[#0d4c9e]" />
         <div className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between px-5 lg:px-10">
@@ -151,7 +152,7 @@ export default function Home() {
         )}
       </header>
 
-      <main ref={mainRef}>
+      <main id="contenido-principal" ref={mainRef} tabIndex={-1}>
         <section id="inicio" className="relative overflow-hidden bg-[#fffdf7] pt-[84px]">
           <svg className="hero-thread absolute left-0 top-24 h-32 w-[70%] opacity-75" viewBox="0 0 720 130" preserveAspectRatio="none" aria-hidden="true">
             <path className="hero-thread-path" d="M-12 77C62 35 121 113 194 77S325 40 403 72s137 39 214-1 82-28 117-9" />
