@@ -1,6 +1,6 @@
 /**
  * Design: Color que Trabaja — a calm, high-contrast legal-information page using the established blue, red, and yellow brand language.
- * Purpose: present the staging privacy notice clearly without adding forms, analytics, storage, or third-party scripts.
+ * Purpose: present the staging privacy notice clearly, including the limited Formspree synthetic-test pilot without analytics or files.
  */
 import { ArrowLeft, Mail, ShieldCheck } from "lucide-react";
 
@@ -37,11 +37,11 @@ export default function PrivacyNotice() {
         </div>
 
         <section className="mt-10 rounded-2xl border-l-[6px] border-[#f3bd25] bg-[#fff7da] p-6 shadow-[0_10px_24px_rgba(18,61,128,0.06)]" aria-labelledby="estado-staging">
-          <div className="flex items-start gap-4"><ShieldCheck className="mt-0.5 shrink-0 text-[#0d4c9e]" size={22} /><div><h2 id="estado-staging" className="font-display text-xl font-bold text-[#123d80]">Versión de revisión para el staging</h2><p className="mt-2 text-sm leading-6 text-[#5d6c82]">Esta página se publica para revisión antes de activar un formulario con envío al servidor. Actualmente, el sitio prepara correos desde el dispositivo de la persona visitante; no recibe ni almacena esos datos en un servidor del sitio.</p></div></div>
+          <div className="flex items-start gap-4"><ShieldCheck className="mt-0.5 shrink-0 text-[#0d4c9e]" size={22} /><div><h2 id="estado-staging" className="font-display text-xl font-bold text-[#123d80]">Piloto de pruebas para el staging</h2><p className="mt-2 text-sm leading-6 text-[#5d6c82]">El sitio mantiene el correo guiado como vía oficial. El formulario visible es un piloto limitado a pruebas sintéticas: no envíe datos reales, archivos ni información de clientes mientras el buzón oficial se verifica en el proveedor.</p></div></div>
         </section>
 
         <article className="mt-10 rounded-2xl bg-white p-6 shadow-[0_16px_36px_rgba(18,61,128,0.09)] sm:p-9 lg:p-11">
-          <div className="grid gap-4 border-b border-[#d8e0ec] pb-7 sm:grid-cols-2"><div><p className="text-[0.64rem] font-bold uppercase tracking-[0.15em] text-[#6d7c92]">Última actualización</p><p className="mt-1 text-sm font-semibold text-[#123d80]">24 de agosto de 2026</p></div><div><p className="text-[0.64rem] font-bold uppercase tracking-[0.15em] text-[#6d7c92]">Versión</p><p className="mt-1 text-sm font-semibold text-[#123d80]">Staging · revisión previa a formulario</p></div></div>
+          <div className="grid gap-4 border-b border-[#d8e0ec] pb-7 sm:grid-cols-2"><div><p className="text-[0.64rem] font-bold uppercase tracking-[0.15em] text-[#6d7c92]">Última actualización</p><p className="mt-1 text-sm font-semibold text-[#123d80]">24 de agosto de 2026</p></div><div><p className="text-[0.64rem] font-bold uppercase tracking-[0.15em] text-[#6d7c92]">Versión</p><p className="mt-1 text-sm font-semibold text-[#123d80]">Staging · piloto sintético con Formspree</p></div></div>
 
           <NoticeSection title="Responsable"><p>Firma Bordados, con domicilio en Emilio Carranza #1021 Int. 113, Col. Burócratas, Piedras Negras, Coahuila, es responsable del tratamiento de los datos personales descritos en este aviso.</p></NoticeSection>
 
@@ -55,7 +55,7 @@ export default function PrivacyNotice() {
 
           <NoticeSection title="Revocación y conservación"><p>Cuando el tratamiento se base en consentimiento y sea procedente revocarlo, puede solicitarlo al mismo correo con el asunto “Privacidad — revocación de consentimiento”.</p><p>Como política operativa propuesta, las consultas se conservarán hasta por doce meses desde la última interacción y posteriormente se eliminarán o disociarán, salvo que exista una relación comercial o una obligación legal o contractual aplicable.</p></NoticeSection>
 
-          <NoticeSection title="Proveedores, seguridad y cambios"><p>Antes de activar un formulario con envío al servidor, un servicio de correo transaccional, antispam o analítica, Firma Bordados revisará el tratamiento aplicable y actualizará este aviso cuando corresponda. Actualmente esta versión de staging no activa esas integraciones.</p><p>Firma Bordados procurará aplicar medidas administrativas, técnicas y físicas razonables para evitar el daño, pérdida, alteración, destrucción, uso, acceso o tratamiento no autorizado de los datos. Los cambios relevantes a este aviso se comunicarán en esta misma página.</p></NoticeSection>
+          <NoticeSection title="Proveedores, seguridad y cambios"><p>Durante este piloto de pruebas sintéticas, el formulario envía los campos de prueba a Formspree para validar el flujo. Formspree actúa como proveedor técnico y puede conservar un archivo técnico de envíos conforme a su configuración de plan. El piloto no está autorizado para consultas reales hasta verificar el buzón oficial de Firma Bordados como destinatario.</p><p>El piloto no admite archivos, no usa analítica, no activa autorespuestas ni agrega destinatarios adicionales. Firma Bordados procurará aplicar medidas administrativas, técnicas y físicas razonables para evitar el daño, pérdida, alteración, destrucción, uso, acceso o tratamiento no autorizado de los datos. Los cambios relevantes a este aviso se comunicarán en esta misma página.</p></NoticeSection>
 
           <div className="mt-10 rounded-xl bg-[#f2f7ff] p-5"><p className="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#0d4c9e]"><Mail size={15} /> Contacto de privacidad</p><a className="mt-2 inline-block text-base font-bold text-[#123d80] underline decoration-[#df2b2c] decoration-2 underline-offset-4 hover:text-[#df2b2c]" href={`mailto:${privacyEmail}?subject=Privacidad%20%E2%80%94%20consulta`}>{privacyEmail}</a></div>
         </article>
