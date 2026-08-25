@@ -30,6 +30,7 @@ const officialLogo = "/media/logo-firma-bordados.jpeg";
 const authorizedProcessImage = "/media/proceso-autorizado.jpeg";
 const uniformsImage = "/media/prendas-color-web.webp";
 const storefrontImage = "/media/fachada-firma-bordados.webp";
+const guidedWhatsAppUrl = "https://wa.me/528787880735?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20a%20Firma%20Bordados.%0A%0ATipo%20de%20prenda%3A%0AT%C3%A9cnica%20que%20me%20interesa%20%28bordado%20o%20serigraf%C3%ADa%29%3A%0ACantidad%20aproximada%3A%0AUso%20o%20requerimiento%3A";
 
 const socialLinks = [
   { label: "Facebook", href: "https://www.facebook.com/firmabordadospiedras" },
@@ -66,6 +67,7 @@ const catalogues = [
 
 const navItems = [
   ["Capacidades", "#capacidades"],
+  ["Cómo solicitar", "#solicitar"],
   ["Catálogos", "#catalogos"],
   ["Nuestro trabajo", "#acerca"],
   ["Contacto", "#contacto"],
@@ -170,7 +172,7 @@ export default function Home() {
               <div className="mt-6 h-1.5 w-20 rounded-full bg-[#f3bd25]" />
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#4e6282] lg:text-xl">Prendas, bordado y catálogos para equipos que buscan una imagen clara, profesional y lista para acompañar su operación.</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a href="https://wa.me/528787880735?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20prendas%2C%20bordado%20o%20serigraf%C3%ADa." target="_blank" rel="noreferrer" className="motion-cta inline-flex items-center justify-center gap-3 rounded-md bg-[#df2b2c] px-6 py-4 text-xs font-bold uppercase tracking-[0.13em] text-white shadow-[0_10px_22px_rgba(223,43,44,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#c82021]">Solicitar por WhatsApp <MessageCircle size={17} /></a>
+                <a href={guidedWhatsAppUrl} target="_blank" rel="noreferrer" className="motion-cta inline-flex items-center justify-center gap-3 rounded-md bg-[#df2b2c] px-6 py-4 text-xs font-bold uppercase tracking-[0.13em] text-white shadow-[0_10px_22px_rgba(223,43,44,0.25)] transition-all hover:-translate-y-0.5 hover:bg-[#c82021]">Solicitar por WhatsApp <MessageCircle size={17} /></a>
                 <a href="#catalogos" className="motion-cta inline-flex items-center justify-center gap-3 rounded-md border-2 border-[#0d4c9e] bg-white px-6 py-4 text-xs font-bold uppercase tracking-[0.13em] text-[#0d4c9e] transition-all hover:-translate-y-0.5 hover:bg-[#edf4ff]">Ver catálogos <ArrowDownRight size={17} /></a>
               </div>
               <div className="mt-10 flex flex-wrap gap-3 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[#31517e]"><span className="rounded-full bg-[#f8e6a3] px-3 py-2">20+ años</span><span className="rounded-full bg-[#dcebff] px-3 py-2">03 catálogos</span><span className="rounded-full bg-[#f9d1d1] px-3 py-2">Atención personalizada</span></div>
@@ -201,6 +203,20 @@ export default function Home() {
               <p className="border-l-2 border-[#f3bd25] pl-4 text-sm leading-6 text-[#65728a]">Los tiempos de entrega se confirman al revisar la cantidad, el requerimiento y la carga de trabajo actual.</p>
               <p className="border-l-2 border-[#0d4c9e] pl-4 text-sm leading-6 text-[#65728a]">Le ayudamos a explorar opciones de prenda de acuerdo con las necesidades de presentación de su equipo.</p>
             </div>
+          </div>
+        </section>
+
+        <section id="solicitar" className="relative overflow-hidden bg-[#fff7da] py-20 lg:py-28">
+          <div aria-hidden="true" className="absolute -left-10 top-16 h-32 w-32 rounded-full border-[18px] border-[#0d4c9e] opacity-10" />
+          <div className="relative mx-auto max-w-[1440px] px-5 lg:px-10">
+            <div data-reveal className="max-w-3xl"><p className="text-[0.68rem] font-bold uppercase tracking-[0.17em] text-[#df2b2c]">Consulta clara</p><h2 className="mt-4 font-display text-4xl font-bold leading-tight tracking-[-0.04em] text-[#123d80] sm:text-5xl">Así puede comenzar su solicitud.</h2><p className="mt-5 max-w-2xl text-base leading-7 text-[#5d6c82]">Comparta una idea inicial y el equipo de Firma Bordados le orientará sobre la prenda, la técnica y los detalles a confirmar.</p></div>
+            <div className="mt-12 grid gap-5 lg:grid-cols-3">
+              <article data-reveal data-reveal-delay="1" className="rounded-2xl border-t-[6px] border-t-[#0d4c9e] bg-white p-7 shadow-[0_12px_24px_rgba(18,61,128,0.09)]"><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dcebff] text-sm font-bold text-[#0d4c9e]">01</span><h3 className="mt-6 font-display text-2xl font-bold text-[#123d80]">Cuéntenos su idea</h3><p className="mt-3 text-sm leading-6 text-[#65728a]">Indique el tipo de prenda, el uso de su equipo y la técnica que desea explorar.</p></article>
+              <article data-reveal data-reveal-delay="2" className="rounded-2xl border-t-[6px] border-t-[#f3bd25] bg-white p-7 shadow-[0_12px_24px_rgba(18,61,128,0.09)]"><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#fff2bd] text-sm font-bold text-[#a66a00]">02</span><h3 className="mt-6 font-display text-2xl font-bold text-[#123d80]">Explore opciones</h3><p className="mt-3 text-sm leading-6 text-[#65728a]">Revise los catálogos disponibles para conversar sobre una opción de prenda adecuada.</p></article>
+              <article data-reveal data-reveal-delay="3" className="rounded-2xl border-t-[6px] border-t-[#df2b2c] bg-white p-7 shadow-[0_12px_24px_rgba(18,61,128,0.09)]"><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f9d1d1] text-sm font-bold text-[#bd2021]">03</span><h3 className="mt-6 font-display text-2xl font-bold text-[#123d80]">Confirme los detalles</h3><p className="mt-3 text-sm leading-6 text-[#65728a]">La cantidad, requerimiento y carga de trabajo se revisan directamente con el equipo.</p></article>
+            </div>
+            <div data-reveal data-reveal-delay="2" className="mt-8 grid gap-5 rounded-2xl bg-[#0d4c9e] p-6 text-white shadow-[0_18px_34px_rgba(18,61,128,0.2)] lg:grid-cols-[1fr_auto] lg:items-center lg:p-8"><div><p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#ffe584]">Mensaje guiado</p><p className="mt-2 max-w-2xl text-sm leading-6 text-white/84">WhatsApp prepara campos opcionales para prenda, técnica, cantidad aproximada y uso. El sitio no guarda esa información.</p></div><a href={guidedWhatsAppUrl} target="_blank" rel="noreferrer" className="motion-cta inline-flex items-center justify-center gap-3 rounded-md bg-[#df2b2c] px-6 py-4 text-xs font-bold uppercase tracking-[0.13em] text-white transition-all hover:-translate-y-0.5 hover:bg-[#c82021]">Iniciar consulta <MessageCircle size={17} /></a></div>
+            <div data-reveal data-reveal-delay="3" className="mt-5 flex flex-col justify-between gap-4 rounded-2xl border border-[#d8e0ec] bg-white/85 p-5 shadow-[0_8px_18px_rgba(18,61,128,0.06)] lg:flex-row lg:items-center"><div><p className="text-[0.63rem] font-bold uppercase tracking-[0.16em] text-[#df2b2c]">Marcas por catálogo</p><p className="mt-1 text-sm leading-6 text-[#65728a]">Explore BigBang, Soul & Blues y M&O en los catálogos vigentes para iniciar la conversación.</p></div><div className="flex flex-wrap gap-2">{catalogues.map((catalogue) => <a key={catalogue.label} href={catalogue.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[#cbd8eb] bg-white px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-[#123d80] transition-colors hover:border-[#0d4c9e] hover:bg-[#edf4ff]"><Check size={14} className="text-[#df2b2c]" /> {catalogue.label}</a>)}</div></div>
           </div>
         </section>
 
