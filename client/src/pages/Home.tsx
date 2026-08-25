@@ -32,6 +32,7 @@ const uniformsImage = "/media/prendas-color-web.webp";
 const storefrontImage = "/media/fachada-firma-bordados.webp";
 const digitalizationImage = "/media/digitalizacion-proceso.png";
 const guidedWhatsAppUrl = "https://wa.me/528787880735?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20a%20Firma%20Bordados.%0A%0ATipo%20de%20prenda%3A%0AT%C3%A9cnica%20que%20me%20interesa%20%28bordado%20o%20serigraf%C3%ADa%29%3A%0ACantidad%20aproximada%3A%0AUso%20o%20requerimiento%3A";
+const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Emilio%20Carranza%201021%20Int.%20113%2C%20Col.%20Bur%C3%B3cratas%2C%20Piedras%20Negras%2C%20Coahuila%2C%20Mexico";
 
 const socialLinks = [
   { label: "Facebook", href: "https://www.facebook.com/firmabordadospiedras" },
@@ -246,7 +247,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#123d80] py-8 text-white/75"><div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-4 px-5 text-xs sm:flex-row sm:items-center lg:px-10"><p>© {new Date().getFullYear()} Firma Bordados. Todos los derechos reservados.</p><div className="flex flex-wrap items-center gap-x-4 gap-y-2"><nav className="flex items-center gap-3" aria-label="Redes sociales">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="font-bold uppercase tracking-[0.11em] text-white/75 transition-colors hover:text-[#ffe584]" aria-label={`Abrir ${social.label} de Firma Bordados en una nueva pestaña`}>{social.label}</a>)}</nav><span className="font-semibold uppercase tracking-[0.12em] text-white/45">Staging de modernización · sin cambio DNS</span></div></div></footer>
+      <footer className="bg-[#123d80] py-8 text-white/75"><div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-4 px-5 text-xs sm:flex-row sm:items-center lg:px-10"><p>© {new Date().getFullYear()} Firma Bordados. Todos los derechos reservados.</p><div className="flex flex-wrap items-center gap-x-4 gap-y-2"><nav className="flex items-center gap-3" aria-label="Redes sociales">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="font-bold uppercase tracking-[0.11em] text-white/75 transition-colors hover:text-[#ffe584]" aria-label={`Abrir ${social.label} de Firma Bordados en una nueva pestaña`}>{social.label}</a>)}</nav><a href={directionsUrl} target="_blank" rel="noreferrer" className="font-bold uppercase tracking-[0.11em] text-white/75 transition-colors hover:text-[#ffe584]">Cómo llegar</a><span className="font-semibold uppercase tracking-[0.12em] text-white/45">Staging de modernización · sin cambio DNS</span></div></div></footer>
     </div>
   );
 }
